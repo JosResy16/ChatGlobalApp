@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Entities.Common
 {
-    public class RefreshToken
+    public class StoredRefreshToken
     {
-        public string Token { get; set; }
-        public DateTime Expiration { get; set; }
-        public bool IsRevoked { get; set; }
+        public int Id { get; set; }
+        public RefreshToken Token { get; set; }
         public int UserId { get; set; }
-        public bool IsUsed { get; set; }
+        public DateTime Expiration { get; set; }
+        public bool IsExpired { get; set; }
+        public bool IsRevoked { get; set; }
     }
 }

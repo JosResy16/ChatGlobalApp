@@ -1,5 +1,6 @@
 ﻿
 using Entities.Common;
+using Entities.DTOs;
 
 namespace Entities
 {
@@ -14,14 +15,13 @@ namespace Entities
         public bool IsActive { get; private set; }
         public string? Rol { get; private set; }
 
-        public User(string firstName, string lastName, string email)
+        public User(string email, string password)
         {
-            FirstName = firstName;
-            LastName = lastName;
             Email = email;
+            PasswordHash = password;
         }
 
-        public void UpdateInfo(User user)
+        public void UpdateInfo(UserDTO user)
         {
             if (user == null)
                 new ArgumentException("no user recibido");
